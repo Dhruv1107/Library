@@ -1,0 +1,13 @@
+{
+    "beforeLoginNavbar": [
+        { "title": "SIGNUP", "url": "auth/signup", "iconClass": "fa-user-plus" },
+        { "title": "LOGIN", "url": "auth/login", "iconClass": "fa-sign-in" }
+    ],
+    "afterLoginNavbar": [
+        { "title": "DASHBOARD", "url": "dashboard", "iconClass": "fa-home" },
+        { "title": "RESERVE", "url": "reserveDashboard", "iconClass": "fa-bookmark" },
+        { "title": "NOTIFICATION", "url": "notification", "iconClass": "fa-bell" },
+        { "title": "ADD-BOOK", "url": "add", "iconClass": "fa-plus" },
+        { "title": "LOGOUT", "url": "logout", "iconClass": "fa-sign-out" }
+    ]   
+}

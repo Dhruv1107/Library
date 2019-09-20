@@ -1,0 +1,15 @@
+.page-footer{
+    background-color: hsl(345, 6.1%, 6%);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top:2vh;
+    padding-bottom: 2vh; 
+}
+
+.footer-text {
+    font: 70% "Source Sans Pro", "Hiragino Sans GB", "Microsoft JhengHei", arial, helvetica, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+}

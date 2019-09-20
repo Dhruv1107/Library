@@ -1,0 +1,15 @@
+<div style="text-align: center;">
+    <span class='heading'>
+        Notifications...
+    </span>
+</div>
+
+<div class='list'>
+    <ul *ngFor = "let item of book_name; let myIndex = index">
+      <li (click) = "onClick(myIndex)">
+        <img src="{{images[myIndex]}}" >
+        <h3>{{book_name[myIndex]}}</h3>
+        <p>You have reserved this book on {{start_date[myIndex]}}</p>
+      </li>
+    </ul>
+  </div>

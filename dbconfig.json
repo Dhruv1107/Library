@@ -1,0 +1,4 @@
+{
+    "connectionString": "mongodb+srv://libuser:22many@cluster0-coypu.mongodb.net/library?retryWrites=true&w=majority",
+    "secret": "FCCOREJSTEAM2019"
+}

@@ -1,0 +1,110 @@
+
+<div class="vertical-center">
+    <div *ngIf="success">
+        <div class="container">
+            <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Book added Successfully
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <form #addBk="ngForm" (ngSubmit)="addBook(addBk)">
+            <div class="row justify-content-around mt-5">
+                <div class="col-sm-3">
+                    <!-- PUT IMAGE HERE -->
+                    <label>Select Image for Book</label>
+                    <input type="file" required name="imageInput" accept="image/png, image/jpeg"
+                        (change)="displayImage($event)" ngModel #image="ngModel">
+
+                    <img *ngIf="imageUrl" [src]="imageUrl">
+                </div>
+                <div class="col-sm-5 left-form">
+                    <div class="row">
+                        <label>Title</label>
+                        <input required minlength="5" class="form-control" type="text" name="bookName"
+                            placeholder="Book Name" ngModel #booktitle="ngModel">
+                        <div *ngIf="booktitle.invalid && booktitle.touched">
+                            <small class="text-danger" *ngIf="booktitle.errors?.required">*Book title is
+                                required</small>
+                            <small class="text-danger" *ngIf="booktitle.errors?.minlength">*Title must be at least 5
+                                characters</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Description</label>
+                        <textarea required minlength="20" class="form-control" rows="10" name="description"
+                            placeholder="Book Description" ngModel #bookdescription="ngModel">
+                        </textarea>
+                        <div *ngIf="bookdescription.invalid && bookdescription.touched">
+                            <small class="text-danger" *ngIf="bookdescription.errors?.required">*Book Description is
+                                required</small>
+                            <small class="text-danger" *ngIf="bookdescription.errors?.minlength">*Description must be at
+                                least 20 characters</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 right-form">
+                    <div class="row">
+                        <label>ISBN</label>
+                        <input required class="form-control" type="text" name="ISBN" [pattern]="isbnPattern"
+                            placeholder="ISBN" ngModel #isbn="ngModel">
+                        <div *ngIf="isbn.invalid && isbn.touched ">
+                            <div *ngIf="isbn.errors.pattern">
+                                <small class="text-danger">ISBN not valid.</small>
+                            </div>
+                            <small class="text-danger" *ngIf="isbn.errors?.required">*ISBN Number is a must</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Author Name</label>
+                        <input required minlength="3" class="form-control" type="text" name="author"
+                            [pattern]="unamePattern" placeholder="Author" ngModel #authorName="ngModel">
+                        <div *ngIf="authorName.invalid && authorName.touched">
+                            <small class="text-danger" *ngIf="authorName.errors.pattern">*Author Name is not
+                                valid</small>
+                            <small class="text-danger" *ngIf="authorName.errors?.required">*Author Name is
+                                required</small>
+                            <small class="text-danger" *ngIf="authorName.errors?.minlength">*Author Name must be at
+                                least 3 characters</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Release Year</label>
+                        <input required class="form-control" type="text" name="relDate" [pattern]="year"
+                            placeholder="Release Date" ngModel #relDate="ngModel">
+                        <div *ngIf="relDate.invalid && relDate.touched">
+                            <small class="text-danger" *ngIf="relDate.errors.pattern">*year is not valid</small>
+                            <small class="text-danger" *ngIf="relDate.errors?.required">*Release Year is
+                                required</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Publication</label>
+                        <input required class="form-control" type="text" name="publication" [pattern]="unamePattern"
+                            placeholder="publication " ngModel #publication="ngModel">
+                        <div *ngIf="publication.invalid && publication.touched">
+                            <small class="text-danger" *ngIf="publication.errors.pattern">*Publication is not
+                                valid</small>
+                            <small class="text-danger" *ngIf="publication.errors?.required">*Publication is
+                                required</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Category</label>
+                        <input required class="form-control" type="text" name="category" [pattern]="unamePattern"
+                            placeholder="Category" ngModel #category="ngModel">
+                        <div *ngIf="category.invalid && category.touched">
+                            <small class="text-danger" *ngIf="category.errors.pattern">*Category is not valid</small>
+
+                            <small class="text-danger" *ngIf="category.errors?.required">*Category is required</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button [disabled]="!addBk.valid" class="btn text-white" type="submit">Add Book</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

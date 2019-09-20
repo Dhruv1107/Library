@@ -1,0 +1,39 @@
+input.ng-invalid.ng-touched, .invalid { 
+    border: 1px solid red; 
+}
+
+.display-none {
+    display: none;
+}
+
+.input-group-text {
+    border: none;
+}
+
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: red;
+    font-size: .85rem;
+}
+
+.bg-dark, .btn-dark, .btn-dark:active {
+    background: rgb(35, 31, 32) !important;
+}
+
+.margin-form {
+    margin-top: 10%;
+}
+
+.link-font {
+    font-size: .8rem;
+}
+
+button:disabled {
+    opacity: none !important;
+}
+
+.btn.disabled, .btn:disabled {
+    opacity: none;
+}

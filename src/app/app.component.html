@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <app-navbar [userLoginStatus] = "userLoginStatus" [currentUser]="currentUser"></app-navbar>
+        </div>
+    </div>
+    <div class="row main">
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

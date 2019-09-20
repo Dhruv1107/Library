@@ -1,0 +1,70 @@
+<div *ngIf="books.length else noBooks">
+  <div class="container">
+    <h2 class="text-center text-color">{{reservation.MY_RESERVATIONS}}</h2>
+    <div *ngFor="let books of books" class="row">
+      <div class="card col-12 col-md-12 col-lg-8 col-xl-10 " >
+        <div class="card-body ">
+          <div class="row align-items-center h-100">
+            <div class="col-sm-8 col-md-6 col-lg-2 col-xl-3 align-self-center">
+              <img src="{{books.image}}" alt="Card image cap" class="rounded imgSize" />
+            </div>
+            <div class="col-lg-10 col-xl-9">
+              <h6>{{books.title}}</h6>
+              <p>{{books.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card col-12 col-md-12 col-lg-3 col-xl-2 padding-0" >
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-black-50 border-0 list">
+            {{reservation.ISBN_NUMBER + reservation.SPACE + reservation.DIVIDER + reservation.SPACE}}
+            <p class="text-dark">{{books.isbn}}</p>
+          </li>
+          <li class="list-group-item text-black-50 border-0 list">
+            {{reservation.AUTHOR_NAME + reservation.SPACE + reservation.DIVIDER + reservation.SPACE}}<p
+              class="text-dark">{{books.author}}</p>
+          </li>
+          <li class="list-group-item text-black-50 border-0 list">
+            {{reservation.RELEASE_YEAR + reservation.SPACE + reservation.DIVIDER + reservation.SPACE}}<p
+              class="text-dark">{{books.year}}</p>
+          </li>
+          <li class="list-group-item text-black-50 border-0 list">
+            {{reservation.ISSUE_DATE + reservation.SPACE + reservation.DIVIDER + reservation.SPACE}}<p
+              class="text-dark">{{books.rentedBy[0].startDate | date}}</p>
+          </li>
+          <li class="list-group-item text-black-50 border-0 list">
+            {{reservation.RETURN_DATE + reservation.SPACE + reservation.DIVIDER + reservation.SPACE}}<p
+              class="text-dark">{{getReturnDate(books.rentedBy[0].startDate , books.rentedBy[0].daysToRent) | date}}</p>
+          </li>
+        </ul>
+        <div>
+          <button (click)="confirmationPopUp(books._id)"
+            class="btn right-margin bg-dark text-white" >{{reservation.RETURN_BOOK}}</button>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+<ng-template #noBooks>
+  <div class="row justify-content-center top-margin">
+    <h2 class="container text-center text-color">{{reservation.NO_BOOKS}}</h2>
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col">
+            <input name="searchISBN" [(ngModel)]="searchISBN"
+              class="form-control form-control-lg form-control-borderless" type="search"
+              placeholder="Search With ISBN Number">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-lg bg-dark text-white" [disabled]="!searchISBN" type="submit"
+              (click)="searchBook(searchISBN)">{{reservation.SEARCH}}</button>
+          </div>
+        </div>
+        <p class="left-margin">{{reservation.SEARCH_MESSAGE}}</p>
+      </form>
+    </div>
+  </div>
+</ng-template>

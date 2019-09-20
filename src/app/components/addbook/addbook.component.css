@@ -1,0 +1,21 @@
+.bookform{
+    margin:5% 0;
+}
+button{
+    margin-top: 10px;
+    background:  rgb(35, 31, 32)
+}
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 50vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  img {
+    width:280px;
+    height:320px;
+    padding: 10px;
+
+  }

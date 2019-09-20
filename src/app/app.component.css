@@ -1,0 +1,9 @@
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+.main {
+    margin-bottom: 15vh;
+}
