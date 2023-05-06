@@ -31,7 +31,7 @@
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mongoose": "^5.7.1",
     "nodemailer": "^6.3.0",
     "nodemon": "^1.19.2",
